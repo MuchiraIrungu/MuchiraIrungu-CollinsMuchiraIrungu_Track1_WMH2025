@@ -55,8 +55,9 @@ Immutable + timestamped on Hedera
 Backend Endpoint (Node.js + Hedera SDK):
 
 http
-Copy code
+
 POST http://your-ip:3001/api/reports/anonymous
+
 Creates temporary account → submits to HCS topic → returns transactionId
 
 4. User Flow (Key Journey)
@@ -78,48 +79,40 @@ Auto/manual return to home
 Purpose	URL / Source
 Satellite Tiles (Public)	https://tiles.maps.eox.at/...
 NDVI Tiles (Public)	ArcGIS Living Atlas (no key needed)
-GEE Dashboard	Link
 Blockchain Submit	POST http://[your-ip]:3001/api/reports/anonymous
 
 6. Setup Instructions
 1. Clone repository
-bash
-Copy code
+
 git clone https://github.com/MuchiraIrungu/MuchiraIrungu-CollinsMuchiraIrungu_Track1_WMH2025.git
 cd LindaMisitu
+
 2. Install frontend
-bash
-Copy code
 cd linda-frontend
 npm install
+
 3. Install backend
-bash
-Copy code
 cd ../backend
 npm install
+
 4. Add .env file (backend)
-ini
-Copy code
-PORT=3001
-SH_AUTH_TOKEN=your_sentinelhub_token_here
+MY_ACCOUNT_ID = 0.0.7158441
+MY_PRIVATE_KEY = 302e020100300506032b657004220420a74c55ad501ac46d68395d278dea6e8e60177ce72cc4648da0cb823206c2e476
+
 Replace with your actual Sentinel Hub API token.
 
 5. Start servers
-bash
-Copy code
 # Backend
 node server.js
 node try.js
 
 # Frontend (Expo)
 cd ../linda-frontend
-expo start
+npx expo start
 # Scan QR code with Expo Go on your phone
+
 7. References
-
 Pitch deck: pitchdeck/LindaMisitu.pdf
+Hackathon track: Wangari Maathai Hackathon 2025 – Localized forest watch and monitoring
 
-Hackathon track: Wangari Maathai Hackathon 2025 – Forest Protection
 
-yaml
-Copy code
